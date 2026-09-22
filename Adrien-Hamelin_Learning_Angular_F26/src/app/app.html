@@ -1,11 +1,23 @@
-<main style="padding: 2.5rem; font-family: sans-serif; text-align: center;">
-  <header>
-    <h1>Welcome to JAVASCRIPT FRAMEWORKS</h1>
-    <p>Student: <strong>Adrien hamelin</strong></p>
+<main class="catalog-container">
+  <header class="catalog-header">
+    <h1>Pokémon Catalog</h1>
+    <p>Student: <strong>Adrien Hamelin</strong> | Course: <strong>Javascript Frameworks</strong></p>
   </header>
 
-  <section style="margin-top: 2rem;">
-    <h2>Home Page</h2>
-    <p>This is my starter Angular project for MAD 307.</p>
+  <section class="grid-layout">
+    @for (pokemon of pokemonList; track pokemon.id) {
+      <article class="card">
+        <span class="badge">#{{ pokemon.id }}</span>
+        <h2>{{ pokemon.name }}</h2>
+        <p><strong>Type:</strong> {{ pokemon.primaryType }}</p>
+        <p><strong>Base HP:</strong> {{ pokemon.hp }}</p>
+
+        @if (pokemon.description) {
+          <p class="description"><em>{{ pokemon.description }}</em></p>
+        }
+      </article>
+    } @empty {
+      <p class="empty-state">No Pokémon currently found in the catalog.</p>
+    }
   </section>
 </main>
