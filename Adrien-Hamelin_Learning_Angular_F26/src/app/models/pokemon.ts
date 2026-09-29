@@ -6,4 +6,9 @@ export interface Pokemon {
   primaryType: PokemonType; // Union type
   hp: number;
   description?: string;     // Optional property
+  imageUrl?: string;
+}
+export interface PokemonEvent {
+  id: number;
+  action: 'opened' | 'favourited';
 }

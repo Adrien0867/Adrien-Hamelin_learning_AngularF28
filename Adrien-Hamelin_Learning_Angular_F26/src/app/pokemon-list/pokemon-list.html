@@ -1,1 +1,26 @@
-<p>pokemon-list works!</p>
+<section class="list-container">
+  <div id="Dot-Matrix-value" class="status-panel">
+    <strong>System Log:</strong> {{ lastActionMessage }}
+  </div>
+
+  <div class="cards-grid">
+    @for (poke of pokemonList; track poke.id; let count = $count, first = $first, last = $last, even = $even, odd = $odd) {
+      @if (first) {
+        <header class="list-heading">
+          <h2>Showing {{ count }} items</h2>
+        </header>
+      }
+
+      <app-pokemon-list-item
+        [item]="poke"
+        (itemAction)="handleItemAction($event)"
+        [class.even]="even"
+        [class.odd]="odd"
+        [class.is-first]="first"
+        [class.is-last]="last"
+      />
+    } @empty {
+      <p class="empty-state">No Pokémon currently available in the catalog.</p>
+    }
+  </div>
+</section>

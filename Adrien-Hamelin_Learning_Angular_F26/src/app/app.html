@@ -1,23 +1,6 @@
-<main class="catalog-container">
-  <header class="catalog-header">
-    <h1>Pokémon Catalog</h1>
-    <p>Student: <strong>Adrien Hamelin</strong> | Course: <strong>Javascript Frameworks</strong></p>
-  </header>
-
-  <section class="grid-layout">
-    @for (pokemon of pokemonList; track pokemon.id) {
-      <article class="card">
-        <span class="badge">#{{ pokemon.id }}</span>
-        <h2>{{ pokemon.name }}</h2>
-        <p><strong>Type:</strong> {{ pokemon.primaryType }}</p>
-        <p><strong>Base HP:</strong> {{ pokemon.hp }}</p>
-
-        @if (pokemon.description) {
-          <p class="description"><em>{{ pokemon.description }}</em></p>
-        }
-      </article>
-    } @empty {
-      <p class="empty-state">No Pokémon currently found in the catalog.</p>
-    }
-  </section>
+<main style="padding: 2rem; max-width: 1100px; margin: 0 auto; font-family: sans-serif;">
+  <h1>MAD 307: Assignment 3</h1>
+  <textarea rows="2" style="width: 100%; margin-bottom: 1.5rem; padding: 0.5rem;" placeholder="Assignment feedback or notes..."></textarea>
+  
+  <app-pokemon-list></app-pokemon-list>
 </main>

@@ -1,0 +1,38 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.status-panel {
+  background-color: #0f172a;
+  color: #38bdf8;
+  padding: 0.85rem 1.25rem;
+  font-family: monospace;
+  border-radius: 8px;
+}
+
+.list-heading {
+  grid-column: 1 / -1;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.even {
+  background-color: #f8fafc;
+}
+
+.odd {
+  background-color: #ffffff;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  color: #ef4444;
+}
